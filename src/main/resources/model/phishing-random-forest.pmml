@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_3" version="4.3">
+	<Header>
+		<Application name="JPMML-SkLearn" version="1.2.10"/>
+		<Timestamp>2017-11-09T16:21:53Z</Timestamp>
+	</Header>
+	<MiningBuildTask>
+		<Extension>PMMLPipeline(steps=[('classifier', RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            n_estimators=10, n_jobs=1, oob_score=False, random_state=None,
+            verbose=0, warm_start=False))])</Extension>
+	</MiningBuildTask>
+	<DataDictionary>
+		<DataField name="y" optype="categorical" dataType="integer">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="x1" optype="continuous" dataType="float"/>
+	</DataDictionary>
+	<MiningModel functionName="classification">
+		<MiningSchema>
+			<MiningField name="y" usageType="target"/>
+			<MiningField name="x1"/>
+		</MiningSchema>
+		<Output>
+			<OutputField name="probability_0" optype="continuous" dataType="double" feature="probability" value="0"/>
+			<OutputField name="probability_1" optype="continuous" dataType="double" feature="probability" value="1"/>
+		</Output>
+		<Segmentation multipleModelMethod="average">
+			<Segment id="1">
+				<True/>
+				<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+					</MiningSchema>
+					<Node id="1">
+						<True/>
+						<Node id="2">
+							<SimplePredicate field="x1" operator="lessOrEqual" value="0.5"/>
+							<Node id="3" score="0" recordCount="289.0">
+								<SimplePredicate field="x1" operator="lessOrEqual" value="-0.5"/>
+								<ScoreDistribution value="0" recordCount="164.0"/>
+								<ScoreDistribution value="1" recordCount="125.0"/>
+							</Node>
+							<Node id="4" score="1" recordCount="355.0">
+								<SimplePredicate field="x1" operator="greaterThan" value="-0.5"/>
+								<ScoreDistribution value="0" recordCount="162.0"/>
+								<ScoreDistribution value="1" recordCount="193.0"/>
+							</Node>
+						</Node>
+						<Node id="5" score="1" recordCount="193.0">
+							<SimplePredicate field="x1" operator="greaterThan" value="0.5"/>
+							<ScoreDistribution value="0" recordCount="62.0"/>
+							<ScoreDistribution value="1" recordCount="131.0"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="2">
+				<True/>
+				<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+					</MiningSchema>
+					<Node id="1">
+						<True/>
+						<Node id="2">
+							<SimplePredicate field="x1" operator="lessOrEqual" value="0.5"/>
+							<Node id="3" score="0" recordCount="286.0">
+								<SimplePredicate field="x1" operator="lessOrEqual" value="-0.5"/>
+								<ScoreDistribution value="0" recordCount="164.0"/>
+								<ScoreDistribution value="1" recordCount="122.0"/>
+							</Node>
+							<Node id="4" score="1" recordCount="344.0">
+								<SimplePredicate field="x1" operator="greaterThan" value="-0.5"/>
+								<ScoreDistribution value="0" recordCount="161.0"/>
+								<ScoreDistribution value="1" recordCount="183.0"/>
+							</Node>
+						</Node>
+						<Node id="5" score="1" recordCount="207.0">
+							<SimplePredicate field="x1" operator="greaterThan" value="0.5"/>
+							<ScoreDistribution value="0" recordCount="63.0"/>
+							<ScoreDistribution value="1" recordCount="144.0"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="3">
+				<True/>
+				<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+					</MiningSchema>
+					<Node id="1">
+						<True/>
+						<Node id="2" score="0" recordCount="253.0">
+							<SimplePredicate field="x1" operator="lessOrEqual" value="-0.5"/>
+							<ScoreDistribution value="0" recordCount="157.0"/>
+							<ScoreDistribution value="1" recordCount="96.0"/>
+						</Node>
+						<Node id="3">
+							<SimplePredicate field="x1" operator="greaterThan" value="-0.5"/>
+							<Node id="4" score="1" recordCount="384.0">
+								<SimplePredicate field="x1" operator="lessOrEqual" value="0.5"/>
+								<ScoreDistribution value="0" recordCount="151.0"/>
+								<ScoreDistribution value="1" recordCount="233.0"/>
+							</Node>
+							<Node id="5" score="1" recordCount="200.0">
+								<SimplePredicate field="x1" operator="greaterThan" value="0.5"/>
+								<ScoreDistribution value="0" recordCount="68.0"/>
+								<ScoreDistribution value="1" recordCount="132.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="4">
+				<True/>
+				<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+					</MiningSchema>
+					<Node id="1">
+						<True/>
+						<Node id="2">
+							<SimplePredicate field="x1" operator="lessOrEqual" value="0.5"/>
+							<Node id="3" score="0" recordCount="278.0">
+								<SimplePredicate field="x1" operator="lessOrEqual" value="-0.5"/>
+								<ScoreDistribution value="0" recordCount="167.0"/>
+								<ScoreDistribution value="1" recordCount="111.0"/>
+							</Node>
+							<Node id="4" score="1" recordCount="347.0">
+								<SimplePredicate field="x1" operator="greaterThan" value="-0.5"/>
+								<ScoreDistribution value="0" recordCount="166.0"/>
+								<ScoreDistribution value="1" recordCount="181.0"/>
+							</Node>
+						</Node>
+						<Node id="5" score="1" recordCount="212.0">
+							<SimplePredicate field="x1" operator="greaterThan" value="0.5"/>
+							<ScoreDistribution value="0" recordCount="66.0"/>
+							<ScoreDistribution value="1" recordCount="146.0"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="5">
+				<True/>
+				<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+					</MiningSchema>
+					<Node id="1">
+						<True/>
+						<Node id="2">
+							<SimplePredicate field="x1" operator="lessOrEqual" value="0.5"/>
+							<Node id="3" score="0" recordCount="285.0">
+								<SimplePredicate field="x1" operator="lessOrEqual" value="-0.5"/>
+								<ScoreDistribution value="0" recordCount="164.0"/>
+								<ScoreDistribution value="1" recordCount="121.0"/>
+							</Node>
+							<Node id="4" score="1" recordCount="366.0">
+								<SimplePredicate field="x1" operator="greaterThan" value="-0.5"/>
+								<ScoreDistribution value="0" recordCount="168.0"/>
+								<ScoreDistribution value="1" recordCount="198.0"/>
+							</Node>
+						</Node>
+						<Node id="5" score="1" recordCount="186.0">
+							<SimplePredicate field="x1" operator="greaterThan" value="0.5"/>
+							<ScoreDistribution value="0" recordCount="56.0"/>
+							<ScoreDistribution value="1" recordCount="130.0"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="6">
+				<True/>
+				<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+					</MiningSchema>
+					<Node id="1">
+						<True/>
+						<Node id="2">
+							<SimplePredicate field="x1" operator="lessOrEqual" value="0.5"/>
+							<Node id="3" score="0" recordCount="268.0">
+								<SimplePredicate field="x1" operator="lessOrEqual" value="-0.5"/>
+								<ScoreDistribution value="0" recordCount="151.0"/>
+								<ScoreDistribution value="1" recordCount="117.0"/>
+							</Node>
+							<Node id="4" score="1" recordCount="366.0">
+								<SimplePredicate field="x1" operator="greaterThan" value="-0.5"/>
+								<ScoreDistribution value="0" recordCount="171.0"/>
+								<ScoreDistribution value="1" recordCount="195.0"/>
+							</Node>
+						</Node>
+						<Node id="5" score="1" recordCount="203.0">
+							<SimplePredicate field="x1" operator="greaterThan" value="0.5"/>
+							<ScoreDistribution value="0" recordCount="59.0"/>
+							<ScoreDistribution value="1" recordCount="144.0"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="7">
+				<True/>
+				<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+					</MiningSchema>
+					<Node id="1">
+						<True/>
+						<Node id="2" score="0" recordCount="271.0">
+							<SimplePredicate field="x1" operator="lessOrEqual" value="-0.5"/>
+							<ScoreDistribution value="0" recordCount="167.0"/>
+							<ScoreDistribution value="1" recordCount="104.0"/>
+						</Node>
+						<Node id="3">
+							<SimplePredicate field="x1" operator="greaterThan" value="-0.5"/>
+							<Node id="4" score="1" recordCount="353.0">
+								<SimplePredicate field="x1" operator="lessOrEqual" value="0.5"/>
+								<ScoreDistribution value="0" recordCount="167.0"/>
+								<ScoreDistribution value="1" recordCount="186.0"/>
+							</Node>
+							<Node id="5" score="1" recordCount="213.0">
+								<SimplePredicate field="x1" operator="greaterThan" value="0.5"/>
+								<ScoreDistribution value="0" recordCount="73.0"/>
+								<ScoreDistribution value="1" recordCount="140.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="8">
+				<True/>
+				<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+					</MiningSchema>
+					<Node id="1">
+						<True/>
+						<Node id="2">
+							<SimplePredicate field="x1" operator="lessOrEqual" value="0.5"/>
+							<Node id="3" score="0" recordCount="255.0">
+								<SimplePredicate field="x1" operator="lessOrEqual" value="-0.5"/>
+								<ScoreDistribution value="0" recordCount="137.0"/>
+								<ScoreDistribution value="1" recordCount="118.0"/>
+							</Node>
+							<Node id="4" score="1" recordCount="372.0">
+								<SimplePredicate field="x1" operator="greaterThan" value="-0.5"/>
+								<ScoreDistribution value="0" recordCount="167.0"/>
+								<ScoreDistribution value="1" recordCount="205.0"/>
+							</Node>
+						</Node>
+						<Node id="5" score="1" recordCount="210.0">
+							<SimplePredicate field="x1" operator="greaterThan" value="0.5"/>
+							<ScoreDistribution value="0" recordCount="57.0"/>
+							<ScoreDistribution value="1" recordCount="153.0"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="9">
+				<True/>
+				<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+					</MiningSchema>
+					<Node id="1">
+						<True/>
+						<Node id="2" score="0" recordCount="275.0">
+							<SimplePredicate field="x1" operator="lessOrEqual" value="-0.5"/>
+							<ScoreDistribution value="0" recordCount="151.0"/>
+							<ScoreDistribution value="1" recordCount="124.0"/>
+						</Node>
+						<Node id="3">
+							<SimplePredicate field="x1" operator="greaterThan" value="-0.5"/>
+							<Node id="4" score="1" recordCount="364.0">
+								<SimplePredicate field="x1" operator="lessOrEqual" value="0.5"/>
+								<ScoreDistribution value="0" recordCount="147.0"/>
+								<ScoreDistribution value="1" recordCount="217.0"/>
+							</Node>
+							<Node id="5" score="1" recordCount="198.0">
+								<SimplePredicate field="x1" operator="greaterThan" value="0.5"/>
+								<ScoreDistribution value="0" recordCount="58.0"/>
+								<ScoreDistribution value="1" recordCount="140.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="10">
+				<True/>
+				<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+					<MiningSchema>
+						<MiningField name="x1"/>
+					</MiningSchema>
+					<Node id="1">
+						<True/>
+						<Node id="2" score="0" recordCount="263.0">
+							<SimplePredicate field="x1" operator="lessOrEqual" value="-0.5"/>
+							<ScoreDistribution value="0" recordCount="133.0"/>
+							<ScoreDistribution value="1" recordCount="130.0"/>
+						</Node>
+						<Node id="3">
+							<SimplePredicate field="x1" operator="greaterThan" value="-0.5"/>
+							<Node id="4" score="1" recordCount="374.0">
+								<SimplePredicate field="x1" operator="lessOrEqual" value="0.5"/>
+								<ScoreDistribution value="0" recordCount="154.0"/>
+								<ScoreDistribution value="1" recordCount="220.0"/>
+							</Node>
+							<Node id="5" score="1" recordCount="200.0">
+								<SimplePredicate field="x1" operator="greaterThan" value="0.5"/>
+								<ScoreDistribution value="0" recordCount="69.0"/>
+								<ScoreDistribution value="1" recordCount="131.0"/>
+							</Node>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+		</Segmentation>
+	</MiningModel>
+</PMML>
