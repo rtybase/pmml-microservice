@@ -35,7 +35,7 @@ and the service's resource will simply
 	}
 ```
 
-This particular demo pretends to perform phishing classification from the length of URLs, which is not a real scenario of course, but works for the demo purposes. Special thanks to [Dr. David Pryce](https://github.com/dtpryce) for building the PMML file for this demo.
+This particular demo pretends to perform phishing classification from the length of URLs, which is not a real scenario of course, but works for the demo purposes. Special thanks to [Dr. David Pryce](https://github.com/dtpryce) for building the PMML file for this demo using [sklearn2pmml](https://github.com/jpmml/sklearn2pmml).
 
 Make sure you have Java 8 and Maven 3.2.x installed in order to build the project.
 
