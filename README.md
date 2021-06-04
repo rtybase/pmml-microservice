@@ -68,7 +68,7 @@ If you need to configure the service differently, check `etc/` folder for more d
 
 ## 3. Check the service is running
 
-The following folder `src/java/src/test/resources` contains a test script. Open the folder and execute
+The following folder `src/test/resources` contains a test script. Open the folder and execute
 ```
 ./test-endpoints.sh
 ```
@@ -81,7 +81,7 @@ There will be 3 calls to the service
 
 ## 4. Testing the service
 
-The following folder `src/java/src/test/resources` contains a Python script. Open the folder and execute while the service is running
+The following folder `src/test/resources` contains a Python script. Open the folder and execute while the service is running
 ```
 python2 data-validator.py testdata-2.json
 ```
